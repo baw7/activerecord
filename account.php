@@ -1,5 +1,5 @@
 <?php
-class account extends formmodel {
+class account extends model {
 	public $id;
 	public $email;
 	public $fname;
