@@ -7,7 +7,6 @@ class todo extends model {
     public $duedate;
     public $message;
     public $isdone;
-    public $isdone;
     
     public static function getTablename(){
         $tableName='todos';
