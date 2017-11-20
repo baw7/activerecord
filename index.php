@@ -63,7 +63,7 @@ abstract class collection {
 class accounts extends collection {
     protected static $modelName = 'account';
 }
-class todo extends collection {
+class todos extends collection {
     protected static $modelName = 'todo';
 }
 abstract class model {
@@ -131,7 +131,7 @@ class account extends model {
         return $tableName;
     }
 }
-class todos extends model {
+class todo extends model {
     public $id;
     public $owneremail;
     public $ownerid;
