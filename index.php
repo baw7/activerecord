@@ -126,7 +126,7 @@ class account extends model {
     public $gender;
     public $password;
     public static function getTablename(){
-        $tableName='accounts';
+        $tableName='account';
         return $tableName;
     }
 }
@@ -139,7 +139,7 @@ class todo extends model {
     public $message;
     public $isdone;
     public static function getTablename(){
-        $tableName='todos';
+        $tableName='todo';
         return $tableName;
     }
 } 
