@@ -151,13 +151,13 @@ class main
 	$form .= '<center><b>Table</b> <i>Accounts</i>';
 	$form .= '<br>Select all records';
 	$records = accounts::findAll();
-        $tableGen = display::displayTable($records);
+        $tableGen = displaycode::displayTable($records);
 	$form .= $tableGen;
 	
 	$form .= '<p>Select one record';
 	$id = 4;
 	$records = accounts::findOne($id);
-	$tableGen = display::displaytwo($records);
+	$tableGen = displaycode::displaytwo($records);
 	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 	$form .= '<p>Insert one record';
@@ -171,7 +171,7 @@ class main
 	$record->password="1234567";
 	$lastID=$record->save();
 	$records = accounts::findAll();
-	$tableGen = display::displayTable($records);
+	$tableGen = displaycode::displayTable($records);
 	$form .= '<i><br>Inserted  '.$lastID.'</i>';
 	$form .= $tableGen;
         $form .= '<p>Update one record';
@@ -182,7 +182,7 @@ class main
         $record->save();
         $form .= '<i><br>Updated password of id '.$records->id.'</i>';
         $records = accounts::findAll();
-        $tableGen = display::displayTable($records);
+        $tableGen = displaycode::displayTable($records);
         $form .= $tableGen;
         $form .= '<p>Delete one record';
         $records = accounts::findOne($lastID);
@@ -191,17 +191,17 @@ class main
         $record->delete();
 	$form .= '<i><br>Record '.$records->id.' deleted</i>';
 	$records = accounts::findAll();
-        $tableGen = display::displayTable($records);
+        $tableGen = displaycode::displayTable($records);
 	$form .= $tableGen;
 	$form .= '<p><b>Table</b> <i>Todos</i>';
 	$form .= '<br>Select all records';
 	$records = todos::findAll();
-	$tableGen = display::displayTable($records);
+	$tableGen = displaycode::displayTable($records);
 	$form .= $tableGen;
 	$form .= '<p>Select one record';
 	$id = 3;
 	$records = todos::findOne($id);
-	$tableGen = display::displaytwo($records);
+	$tableGen = displaycode::displaytwo($records);
 	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 	$form .= '<p>Insert one record';
@@ -214,7 +214,7 @@ class main
         $record->isdone=0;
         $lastID=$record->save();
 	$records = todos::findAll();
-	$tableGen = display::displayTable($records);
+	$tableGen = displaycode::displayTable($records);
 	$form .= '<i><br>Inserted '.$lastID.'</i>';
 	$form .= $tableGen;
         $form .= '<p>Update one record';
@@ -225,7 +225,7 @@ class main
         $record->save();
         $form .= '<i><br>Updated created date of id '.$records->id.'</i>';
         $records = todos::findAll();
-        $tableGen = display::displayTable($records);
+        $tableGen = displaycode::displayTable($records);
         $form .= $tableGen;
         $form .= '<p>Delete one record';
         $records = todos::findOne($lastID);
@@ -234,7 +234,7 @@ class main
         $record->delete();
 	$form .= '<i><br>Record '.$records->id.' deleted</i>';
         $records = todos::findAll();
-        $tableGen = display::displayTable($records);
+        $tableGen = displaycode::displayTable($records);
         $form .= $tableGen;
         $form .= '</center></form> ';
 	print($form);
