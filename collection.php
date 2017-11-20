@@ -26,7 +26,7 @@ abstract class collection {
         $class = static::$modelName;
         $statement->setFetchMode(PDO::FETCH_CLASS, $class);
         $recordsSet =  $statement->fetchAll();
-        return $recordsSet[0];
+        return $recordsSet[1];
 	}
 }
 ?>
