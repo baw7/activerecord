@@ -1,5 +1,5 @@
 <?php
-class display{
+class displaycode{
     public static function displayTable($records){
     	   $tableGen = '<table border="4">';
            $tableGen .= '<tr>';
