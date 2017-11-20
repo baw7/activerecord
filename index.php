@@ -149,17 +149,17 @@ class main
 	public function __construct() {
 	$form = '<form method ="post" enctype="multipart/form-data">';
 	$form .= '<center><b>Table</b> <b>Accounts</b>';
-	$form .= '<br>Select all records';
+	$form .= '<br>Select all';
 	$records = accounts::findAll();
-        $tableGen = displaycode::displayTable($records);
-	$form .= $tableGen;
+        $tabletable = displaycode::displayTable($records);
+	$form .= $tabletable;
 	
 	$form .= '<p>Select';
 	$id = 2;
 	$records = accounts::findOne($id);
-	$tableGen = displaycode::displaytwo($records);
+	$tabletable = displaycode::displaytwo($records);
 	$form .= '<b><br>Retrieved  '.$id.'</b>';
-	$form .= $tableGen;
+	$form .= $tabletable;
 	$form .= '<p>Insert';
 	$record = new account();
 	$record->email="baw7@njit.edu";
@@ -171,9 +171,9 @@ class main
 	$record->password="1234567";
 	$lastID=$record->save();
 	$records = accounts::findAll();
-	$tableGen = displaycode::displayTable($records);
+	$tabletable = displaycode::displayTable($records);
 	$form .= '<b><br>Inserted  '.$lastID.'</b>';
-	$form .= $tableGen;
+	$form .= $tabletable;
         $form .= '<p>Update';
         $records = accounts::findOne($lastID);
         $record = new account();
@@ -182,8 +182,8 @@ class main
         $record->save();
         $form .= '<b><br>Updated password of id '.$records->id.'</b>';
         $records = accounts::findAll();
-        $tableGen = displaycode::displayTable($records);
-        $form .= $tableGen;
+        $tabletable = displaycode::displayTable($records);
+        $form .= $tabletable;
         $form .= '<p>Delete';
         $records = accounts::findOne($lastID);
         $record= new account();
@@ -191,19 +191,19 @@ class main
         $record->delete();
 	$form .= '<b><br>Record '.$records->id.' deleted</b>';
 	$records = accounts::findAll();
-        $tableGen = displaycode::displayTable($records);
-	$form .= $tableGen;
+        $tabletable = displaycode::displayTable($records);
+	$form .= $tabletable;
 	$form .= '<p><b>Table</b> <b>Todos</b>';
 	$form .= '<br>Select all ';
 	$records = todos::findAll();
-	$tableGen = displaycode::displayTable($records);
-	$form .= $tableGen;
+	$tabletable = displaycode::displayTable($records);
+	$form .= $tabletable;
 	$form .= '<p>Select';
 	$id = 3;
 	$records = todos::findOne($id);
-	$tableGen = displaycode::displaytwo($records);
+	$tabletable = displaycode::displaytwo($records);
 	$form .= '<b><br>Retrieved record '.$id.'</b>';
-	$form .= $tableGen;
+	$form .= $tabletable;
 	$form .= '<p>Insert';
 	$record = new todo();
         $record->owneremail="baw@njit.edu";
@@ -214,9 +214,9 @@ class main
         $record->isdone=0;
         $lastID=$record->save();
 	$records = todos::findAll();
-	$tableGen = displaycode::displayTable($records);
+	$tabletable = displaycode::displayTable($records);
 	$form .= '<b><br>Inserted '.$lastID.'</b>';
-	$form .= $tableGen;
+	$form .= $tabletable;
         $form .= '<p>Update';
         $records = todos::findOne($lastID);
         $record = new todo();
@@ -225,8 +225,8 @@ class main
         $record->save();
         $form .= '<b><br>Updated created date '.$records->id.'</b>';
         $records = todos::findAll();
-        $tableGen = displaycode::displayTable($records);
-        $form .= $tableGen;
+        $tabletable = displaycode::displayTable($records);
+        $form .= $tabletable;
         $form .= '<p>Delete ';
         $records = todos::findOne($lastID);
         $record = new todo();
@@ -234,8 +234,8 @@ class main
         $record->delete();
 	$form .= '<b><br>Record '.$records->id.' deleted</b>';
         $records = todos::findAll();
-        $tableGen = displaycode::displayTable($records);
-        $form .= $tableGen;
+        $tabletable = displaycode::displayTable($records);
+        $form .= $tabletable;
         $form .= '</center></form> ';
 	print($form);
 	}
