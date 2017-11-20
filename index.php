@@ -12,7 +12,7 @@ class Manage {
     }
 }
 spl_autoload_register(array('Manage', 'autoload'));
-$obj=new display;
+$obj=new displaycode;
 $obj=new main();
 class dbConn{
     protected static $db;
