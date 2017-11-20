@@ -156,7 +156,7 @@ class main
 	$form .= '<p>Select one record';
 	$id = 4;
 	$records = accounts::findOne($id);
-	$tableGen = display::displayTableAlternate($records);
+	$tableGen = display::displaytwo($records);
 	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 	$form .= '<p>Insert one record';
@@ -200,7 +200,7 @@ class main
 	$form .= '<p>Select one record';
 	$id = 3;
 	$records = todos::findOne($id);
-	$tableGen = display::displayTableAlternate($records);
+	$tableGen = display::displaytwo($records);
 	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
 	$form .= '<p>Insert one record';
