@@ -2,7 +2,7 @@
 abstract class collection {
     static public function create() {
         $model = new static::$modelName;
-        return $formmodel;
+        return $model;
         $model = new static::$modelName;
         return $model;
 	}
