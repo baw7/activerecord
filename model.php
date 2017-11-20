@@ -18,9 +18,9 @@ abstract class model {
         return $id;
 }
     private function insert() {
-        $modelName=$this->$modelName;
+        $modelName=$this->$nameModle;
 	$tableName = $modelName::getTablename();
-        $modelName=$this->$modelName;
+        $modelName=$this->$nameModel;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
         $columnString = implode(',', array_flip($array));
@@ -30,9 +30,9 @@ abstract class model {
         return $sql;
 	}
     private function update() {
-        $modelName=$this->$modelName;
+        $modelName=$this->$nameModel;
 	$tableName = $modelName::getTablename();
-        $modelName=$this->$modelName;
+        $modelName=$this->$nameModel;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
         $comma = " ";
@@ -48,7 +48,7 @@ abstract class model {
 	}
     public function delete() {
         $db = dbConn::getConnection();
-        $modelName=$this->$modelName;
+        $modelName=$this->$nameModel;
         $tableName = $modelName::getTablename();
         $sql = 'DELETE FROM '.$tableName.' WHERE id='.$this->id;
         $statement = $db->prepare($sql);
