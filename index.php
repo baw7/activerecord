@@ -5,6 +5,7 @@ define('DATABASE','baw7');
 define('USERNAME','baw7');
 define('PASSWORD','jeqTTp7ze');
 define('CONNECTION','sql1.njit.edu');
+
 class Manage {
     public static function autoload($class) {
         include $class . '.php';
@@ -116,7 +117,7 @@ abstract class model {
         $statement->execute();
     }
 }
-class account extends model {
+class accounts extends model {
     public $id;
     public $email;
     public $fname;
@@ -126,11 +127,11 @@ class account extends model {
     public $gender;
     public $password;
     public static function getTablename(){
-        $tableName='account';
+        $tableName='accounts';
         return $tableName;
     }
 }
-class todo extends model {
+class todos extends model {
     public $id;
     public $owneremail;
     public $ownerid;
@@ -139,7 +140,7 @@ class todo extends model {
     public $message;
     public $isdone;
     public static function getTablename(){
-        $tableName='todo';
+        $tableName='todos';
         return $tableName;
     }
 } 
