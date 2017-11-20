@@ -60,7 +60,7 @@ abstract class collection {
         return $recordsSet[0];
     }
 }
-class account extends collection {
+class accounts extends collection {
     protected static $modelName = 'account';
 }
 class todo extends collection {
@@ -127,7 +127,7 @@ class account extends model {
     public $gender;
     public $password;
     public static function getTablename(){
-        $tableName='account';
+        $tableName='accounts';
         return $tableName;
     }
 }
@@ -150,13 +150,13 @@ class main
 	$form = '<form method ="post" enctype="multipart/form-data">';
 	$form .= '<center><b>Table</b> <i>Accounts</i>';
 	$form .= '<br>Select all records';
-	$records = account::findAll();
+	$records = accounts::findAll();
         $tableGen = displaycode::displayTable($records);
 	$form .= $tableGen;
 	
 	$form .= '<p>Select one record';
 	$id = 4;
-	$records = account::findOne($id);
+	$records = accounts::findOne($id);
 	$tableGen = displaycode::displaytwo($records);
 	$form .= '<i><br>Retrieved record '.$id.'</i>';
 	$form .= $tableGen;
@@ -170,27 +170,27 @@ class main
 	$record->gender="female";
 	$record->password="1234567";
 	$lastID=$record->save();
-	$records = account::findAll();
+	$records = accounts::findAll();
 	$tableGen = displaycode::displayTable($records);
 	$form .= '<i><br>Inserted  '.$lastID.'</i>';
 	$form .= $tableGen;
         $form .= '<p>Update one record';
-        $records = account::findOne($lastID);
+        $records = accounts::findOne($lastID);
         $record = new account();
         $record->id=$records->id;
         $record->password="09877";
         $record->save();
         $form .= '<i><br>Updated password of id '.$records->id.'</i>';
-        $records = account::findAll();
+        $records = accounts::findAll();
         $tableGen = displaycode::displayTable($records);
         $form .= $tableGen;
         $form .= '<p>Delete one record';
-        $records = account::findOne($lastID);
+        $records = accounts::findOne($lastID);
         $record= new account();
         $record->id=$records->id;
         $record->delete();
 	$form .= '<i><br>Record '.$records->id.' deleted</i>';
-	$records = account::findAll();
+	$records = accounts::findAll();
         $tableGen = displaycode::displayTable($records);
 	$form .= $tableGen;
 	$form .= '<p><b>Table</b> <i>Todos</i>';
